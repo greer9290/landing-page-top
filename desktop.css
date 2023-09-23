@@ -29,6 +29,17 @@ body::-webkit-scrollbar-thumb {
   /* creates padding around scroll thumb */
 }
 
+
+::-webkit-scrollbar-track:horizontal {
+    background: #1a1e3f;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */    
+}
+
+
 .header-main, .banner-container, .header-container {
     background-color: #1a1e3f;
     color: #f0f0f0;
@@ -48,23 +59,27 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     height: 100%;
     padding-top: 10px;
-    font-size: 36px;
+    font-size: clamp(28px, 2.5vw, 40px);
 }
 
 .header-title {
     width: 50%;
     justify-content: left;
     align-items: left;
-    font-size: 36px;
+    font-size: clamp(28px, 2.5vw, 40px);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 800;
 }
 
 .header-links, ul, li {
-    width: 50%;
+    width: 60%;
     justify-content: space-around;
     align-items: center;
-    font-size: 28px;
+    padding: 0px;
+    font-size: clamp(12px, 2.5vw, 30px);
+    padding-left: clamp(0px, 2.5vw, 20px);
+    padding-right: clamp(0px, 2.5vw, 20px);
+
 }
 
 .banner-container {
@@ -150,8 +165,7 @@ body::-webkit-scrollbar-thumb {
     flex-flow: row nowrap;
     justify-content: left;
     align-items: center;
-    overflow-x: auto;
-    overflow-y: none;
+    overflow-x: scroll;
 }
 
 .content {
